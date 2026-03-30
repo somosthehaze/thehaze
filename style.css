@@ -10,42 +10,97 @@
 body {
   background: #0a0a0a;
   color: white;
+  overflow-x: hidden;
 }
 
-/* HEADER */
+/* =========================
+   HEADER PRO (ANIMADO)
+========================= */
+
 header {
   position: fixed;
   width: 100%;
   top: 0;
+  left: 0;
+
   display: flex;
   justify-content: space-between;
-  padding: 20px 50px;
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(10px);
+  align-items: center;
+
+  padding: 18px 50px;
+
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(12px);
+
   z-index: 1000;
+
+  transition: all 0.4s ease;
 }
 
-.logo {
-  font-weight: 900;
-  color: red;
-  letter-spacing: 3px;
+/* efecto scroll (con JS) */
+header.scrolled {
+  background: rgba(0,0,0,0.85);
+  padding: 12px 50px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
+/* LOGO */
+.logo img {
+  height: 50px;
+  width: auto;
+
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.25));
+}
+
+/* NAV */
 nav a {
   margin-left: 20px;
   color: white;
   text-decoration: none;
+
+  font-size: 14px;
+  letter-spacing: 1px;
+
+  position: relative;
+  transition: opacity 0.3s ease;
 }
 
 nav a:hover {
-  color: red;
+  opacity: 0.7;
 }
 
-/* HERO */
+/* subrayado animado */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+
+  width: 0%;
+  height: 1px;
+  background: red;
+
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   HERO
+========================= */
+
 .hero {
   height: 100vh;
   background: url('images/hero.jpg') center/cover;
   position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,28 +116,44 @@ nav a:hover {
 .hero-content {
   position: relative;
   text-align: center;
+
+  animation: fadeIn 1.5s ease;
 }
 
 .hero h1 {
   font-size: 70px;
   color: red;
+  letter-spacing: 3px;
 }
 
 .hero p {
   margin: 10px 0;
+  opacity: 0.8;
 }
 
 .btn {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 25px;
+
   background: red;
   color: white;
   text-decoration: none;
+
   border-radius: 5px;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* SLIDER */
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(255,0,0,0.3);
+}
+
+/* =========================
+   SLIDER
+========================= */
+
 .slider {
   overflow: hidden;
 }
@@ -98,14 +169,10 @@ nav a:hover {
   object-fit: cover;
 }
 
-@keyframes slide {
-  0% {transform: translateX(0);}
-  33% {transform: translateX(-100%);}
-  66% {transform: translateX(-200%);}
-  100% {transform: translateX(0);}
-}
+/* =========================
+   SECTIONS
+========================= */
 
-/* SECTIONS */
 .section {
   padding: 80px 20px;
   text-align: center;
@@ -115,7 +182,10 @@ nav a:hover {
   background: #111;
 }
 
-/* CARDS */
+/* =========================
+   CARDS
+========================= */
+
 .cards {
   display: flex;
   justify-content: center;
@@ -127,26 +197,151 @@ nav a:hover {
   background: #1a1a1a;
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid red;
+
+  border: 1px solid rgba(255,0,0,0.5);
+
+  transition: transform 0.3s ease;
 }
 
-/* LINKS */
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* =========================
+   LINKS
+========================= */
+
 .platforms a {
   display: inline-block;
   margin: 10px;
   padding: 10px 15px;
+
   border: 1px solid red;
   color: white;
   text-decoration: none;
+
+  transition: all 0.3s ease;
 }
 
 .platforms a:hover {
   background: red;
+  transform: scale(1.05);
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
+
 footer {
   padding: 20px;
   text-align: center;
   background: black;
+  opacity: 0.8;
 }
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes slide {
+  0% {transform: translateX(0);}
+  33% {transform: translateX(-100%);}
+  66% {transform: translateX(-200%);}
+  100% {transform: translateX(0);}
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+
+    /* ================= HEADER MÓVIL ================= */
+  
+    header {
+      padding: 15px 20px;
+    }
+  
+    /* ocultamos nav normal */
+    nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 70%;
+  
+      background: rgba(0,0,0,0.95);
+      backdrop-filter: blur(10px);
+  
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+      gap: 30px;
+  
+      transition: right 0.4s ease;
+    }
+  
+    nav.active {
+      right: 0;
+    }
+  
+    nav a {
+      font-size: 18px;
+    }
+  
+    /* LOGO MÁS PEQUEÑO */
+    .logo img {
+      height: 40px;
+    }
+  
+    /* ================= HERO ================= */
+  
+    .hero h1 {
+      font-size: 40px;
+      text-align: center;
+    }
+  
+    .hero p {
+      font-size: 14px;
+    }
+  
+    /* ================= SLIDER ================= */
+  
+    .slides img {
+      height: 250px;
+    }
+  
+    /* ================= CARDS ================= */
+  
+    .cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 90%;
+    }
+  
+    /* ================= BOTÓN HAMBURGUESA ================= */
+  
+    .menu-toggle {
+      display: block;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+    }
+  }
+  
+  /* DESKTOP OCULTA BOTÓN */
+  .menu-toggle {
+    display: none;
+  }
