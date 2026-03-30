@@ -46,8 +46,8 @@ header.scrolled {
 
 /* LOGO */
 .logo img {
-  height: 50px;
-  width: 50px;
+  height: 10px;
+  width: 10px;
 
   transition: transform 0.3s ease, filter 0.3s ease;
 }
