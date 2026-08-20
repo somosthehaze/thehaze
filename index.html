@@ -2,122 +2,351 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Haze</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>THE HAZE</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
-  <header>
+  <div class="noise"></div>
 
-    <div class="logo">
-      <a href="#"><img src="images/logo.png" alt="THE HAZE" /></a>
+  <!-- NAVBAR -->
+
+  <header class="navbar">
+
+    <div class="nav-logo">
+      THE HAZE
     </div>
 
-    <!-- BOTÓN (MÓVIL) -->
-    <div class="menu-toggle" aria-label="Abrir menú">
-      ☰
-    </div>
+    <nav class="nav-links">
 
-    <nav>
-      <a href="#fechas">Fechas</a>
-      <a href="#info">Info</a>
-      <a href="#escucha">Escúchanos</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+      <a href="#tour" data-i18n="nav.tour">Tour</a>
+      <a href="#music" data-i18n="nav.music">Music</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+
     </nav>
+
+    <div class="menu-toggle">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="language-switcher" aria-label="Language selector">
+
+      <button class="language-button active" type="button" data-language="es" aria-label="Cambiar a español">
+        ES
+      </button>
+
+      <button class="language-button" type="button" data-language="en" aria-label="Switch to English">
+        EN
+      </button>
+
+    </div>
 
   </header>
 
   <!-- HERO -->
+
   <section class="hero">
-    <div class="overlay"></div>
+
+    <div class="hero-overlay"></div>
 
     <div class="hero-content">
-      <h1>THE HAZE</h1>
-      <p>Próxima era. Nueva energía.</p>
-      <a href="#escucha" class="btn">Escúchanos</a>
+
+      <span class="hero-tag" data-i18n="hero.tag">
+        Alternative Rock · Post Grunge
+      </span>
+
+      <h1>
+        THE HAZE
+      </h1>
+
+      <p data-i18n="hero.subtitle">
+        we are all heading towards the light . . . MOTH-like
+      </p>
+
+      <a href="#music" class="hero-btn" data-i18n="hero.button">
+        LISTEN NOW
+      </a>
+
     </div>
+
   </section>
 
-  <!-- SLIDER -->
-  <section class="slider">
-    <button class="prev">←</button>
+  <!-- ABOUT -->
 
-    <div class="slides">
-      <img src="images/foto1.jpg" alt="Imagen 1" />
-      <img src="images/foto2.jpg" alt="Imagen 2" />
-      <img src="images/foto3.jpg" alt="Imagen 3" />
+  <section id="about" class="about">
+
+    <div class="container">
+
+      <span class="section-label" data-i18n="about.label">
+        ABOUT
+      </span>
+
+      <h2 data-i18n="about.title">
+        Bless the underground.
+      </h2>
+
+      <p data-i18n="about.firstParagraph">
+        The Haze is an alternative rock band formed in Cantabria in 2023.
+        Influenced by 90s rock and grunge, the band looks to create its own
+        identity through original songs, raw energy and an honest approach
+        to music.
+      </p>
+
+      <p data-i18n="about.secondParagraph">
+        From the rehearsal room to the stage, intensity and connection are
+        at the core of The Haze. What started as a shared need to make music
+        from within became a project built by friends who make music
+        together.
+      </p>
+
     </div>
 
-    <button class="next">→</button>
+    <img class="about-moths" src="images/polillas.png" alt="" aria-hidden="true">
+
   </section>
 
-  <!-- FECHAS -->
-  <section id="fechas" class="section">
-    <h2>Próximas fechas</h2>
+  <!-- GALLERY -->
 
-    <div class="cards">
-      <div class="card">
-        <h3>Madrid</h3>
-        <p>12 Abril 2026</p>
+  <section id="gallery" class="gallery">
+
+    <div class="gallery-grid">
+
+      <img src="images/foto1.jpg" alt="">
+      <img src="images/foto2.jpg" alt="">
+      <img src="images/foto3.jpg" alt="">
+      <img src="images/foto4.jpg" alt="">
+      <img src="images/foto5.jpg" alt="">
+
+    </div>
+
+  </section>
+
+  <!-- TOUR -->
+
+  <section id="tour" class="tour">
+
+    <div class="container">
+
+      <span class="section-label" data-i18n="tour.label">
+        TOUR
+      </span>
+
+      <h2 data-i18n="tour.title">
+        Upcoming Dates
+      </h2>
+
+      <a class="show"
+        href="https://www.google.com/maps/place/Auditorio+Municipal+Las+Trece+Rosas/@40.3805321,-3.6196672,17z/data=!3m1!4b1!4m6!3m5!1s0xd422506ba4c5f9b:0x101541cba0f8526e!8m2!3d40.380528!4d-3.6170923!16s%2Fg%2F11y3sp3vr?entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank" rel="noopener noreferrer" aria-label="Ver la fecha de Madrid en Google Maps">
+
+        <div>
+          <h3>MADRID</h3>
+          <span>Auditorio Municipal Las Trece Rosas</span>
+        </div>
+
+        <div>
+          <span data-i18n="dates.madridAuditorio">18 SEPTIEMBRE 2026 - 20:00</span>
+        </div>
+
+      </a>
+
+      <a class="show"
+        href="https://www.google.com/maps/search/?api=1&query=Sala+El+Perro+de+la+Parte+de+Atras+del+Coche+Madrid"
+        target="_blank" rel="noopener noreferrer" aria-label="Ver la fecha de Madrid en Google Maps">
+
+        <div>
+          <h3>MADRID</h3>
+          <span>El Perro de la Parte de Atrás del Coche</span>
+        </div>
+
+        <div>
+          <span data-i18n="dates.madridPerro">12 SEPTIEMBRE 2026 - 21:00</span>
+        </div>
+
+      </a>
+
+      <a class="show"
+        href="https://www.google.com/maps/place/Asociacion+Cultural+Octubre/@43.3450722,-4.033895,17z/data=!3m1!4b1!4m6!3m5!1s0xd493e7cd66ae743:0x1842b698f2d2d41b!8m2!3d43.3450683!4d-4.0313201!16s%2Fg%2F11bwq6r_kt?entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank" rel="noopener noreferrer" aria-label="Ver la fecha de Barcelona en Google Maps">
+
+        <div>
+          <h3>CANTABRIA</h3>
+          <span>Asociación Cultural Octubre</span>
+        </div>
+
+        <div>
+          <span data-i18n="dates.cantabriaOctubre">19 SEPTIEMBRE 2026 - 20:00</span>
+        </div>
+
+      </a>
+
+      <a class="show" href="#" target="_blank" rel="noopener noreferrer"
+        aria-label="Ver la fecha de Bilbao en Google Maps">
+
+        <div>
+          <h3>ISLAS BALEARES</h3>
+          <span>Universidad Islas Baleares</span>
+        </div>
+
+        <div>
+          <span data-i18n="dates.baleares">02 OCTUBRE 2026 - Por definir</span>
+        </div>
+
+      </a>
+
+      <a class="show"
+        href="https://www.google.com/maps/place/Rock+Beer+The+New/@43.4622858,-3.819458,17z/data=!3m1!4b1!4m6!3m5!1s0xd494bd234312941:0x5f291f8e47a9c39c!8m2!3d43.4622819!4d-3.8168831!16s%2Fg%2F11cncqvk_6?entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank" rel="noopener noreferrer" aria-label="Ver la fecha de Bilbao en Google Maps">
+
+        <div>
+          <h3>CANTABRIA</h3>
+          <span>Rock Beer The New</span>
+        </div>
+
+        <div>
+          <span data-i18n="dates.rockBeer">04 OCTUBRE 2026 - Por definir</span>
+        </div>
+
+      </a>
+
+      <a class="show"
+        href="https://www.google.com/maps/place/Groez/@43.3466094,-4.0489903,17z/data=!3m1!4b1!4m6!3m5!1s0xd493f6f7ddd2041:0x1d6c4f3f8a140c01!8m2!3d43.3466055!4d-4.0464154!16s%2Fg%2F11cn8rrdx1?entry=ttu&g_ep=EgoyMDI2MDgxNy4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank" rel="noopener noreferrer" aria-label="Ver la fecha de Bilbao en Google Maps">
+
+        <div>
+          <h3>CANTABRIA</h3>
+          <span>Sala Groez</span>
+        </div>
+
+        <div>
+          <span data-i18n="dates.groez">09 OCTUBRE 2026 - Por definir</span>
+        </div>
+
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- MUSIC -->
+
+  <section id="music" class="music">
+
+    <div class="container">
+
+      <span class="section-label" data-i18n="music.label">
+        LISTEN
+      </span>
+
+      <h2 data-i18n="music.title">
+        Stream Everywhere
+      </h2>
+
+      <div class="platforms">
+
+        <a href="https://open.spotify.com/intl-es/artist/1EEJ2k4PNpPrLoqu5XLkPp?si=mca6KK5DSYGkeFe2mLNW-Q"
+          target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-spotify" aria-hidden="true"></i>
+          <span data-i18n="music.spotify">Spotify</span>
+        </a>
+
+        <a href="https://music.apple.com/es/search?term=The%20Haze" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-apple" aria-hidden="true"></i>
+          <span data-i18n="music.apple">Apple Music</span>
+        </a>
+
+        <a href="https://music.youtube.com/channel/UCgX3mWqcb7rNa0WBM5n0arA" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+          <span data-i18n="music.youtube">YouTube Music</span>
+        </a>
+
+        <a href="https://music.amazon.es/search/the+haze+my+odyssey?filter=IsLibrary%7Cfalse&sc=none">
+          <i class="fa-brands fa-amazon" aria-hidden="true"></i>
+          <span data-i18n="music.amazon">Amazon Music</span>
+        </a>
+
       </div>
 
-      <div class="card">
-        <h3>Barcelona</h3>
-        <p>20 Abril 2026</p>
+      <div class="socials">
+
+        <span class="socials-label" data-i18n="socials.label">
+          Follow The Haze
+        </span>
+
+        <div class="socials-links">
+
+          <a href="https://www.instagram.com/thehazeoficial/" target="_blank" rel="noopener noreferrer"
+            aria-label="Seguir a The Haze en Instagram">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            <span data-i18n="socials.instagram">Instagram</span>
+          </a>
+
+          <a href="https://www.tiktok.com/@thehazeoficial" target="_blank" rel="noopener noreferrer"
+            aria-label="Seguir a The Haze en TikTok">
+            <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+            <span data-i18n="socials.tiktok">TikTok</span>
+          </a>
+
+          <a href="https://www.youtube.com/@TheHazeOficial" target="_blank" rel="noopener noreferrer"
+            aria-label="Seguir a The Haze en YouTube">
+            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+            <span data-i18n="socials.youtube">YouTube</span>
+          </a>
+
+        </div>
+
       </div>
 
-      <div class="card">
-        <h3>Bilbao</h3>
-        <p>3 Mayo 2026</p>
-      </div>
     </div>
+
   </section>
 
-  <!-- INFO -->
-  <section id="info" class="section dark">
-    <h2>Sobre nosotros</h2>
-    <p>
-      The Haze es un proyecto musical con estética oscura, energía cruda y sonido moderno.
-    </p>
-  </section>
+  <!-- CONTACT -->
 
-  <!-- ESCUCHA -->
-  <section id="escucha" class="section">
-    <h2>Escúchanos</h2>
+  <section id="contact" class="contact">
 
-    <div class="platforms">
-      <a href="#">Spotify</a>
-      <a href="#">Apple Music</a>
-      <a href="#">YouTube</a>
-      <a href="#">SoundCloud</a>
+    <div class="container">
+
+      <h2 data-i18n="contact.title">
+        CONTACT
+      </h2>
+
+      <p data-i18n="contact.email">
+        somosthehaze@thehaze.com
+      </p>
+
     </div>
+
   </section>
 
-  <!-- REDES -->
-  <section class="section dark">
-    <h2>Redes sociales</h2>
-
-    <div class="platforms">
-      <a href="#">Instagram</a>
-      <a href="#">TikTok</a>
-      <a href="#">X</a>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section id="contacto" class="section">
-    <h2>Contacto</h2>
-    <p>somosthehaze@gmail.com</p>
-  </section>
+  <!-- FOOTER -->
 
   <footer>
-    <p>© 2026 THE HAZE</p>
+
+    <small>
+      © 2026 THE HAZE. ALL RIGHTS RESERVED.
+    </small>
+
   </footer>
 
   <script src="script.js"></script>
+
 </body>
 
 </html>
