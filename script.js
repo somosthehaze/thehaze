@@ -38,7 +38,7 @@ const translations = {
         "socials.tiktok": "TikTok",
         "socials.youtube": "YouTube",
         "contact.title": "CONTACTO",
-        "contact.email": "somosthehaze@thehaze.com"
+        "contact.email": "somosthehaze@gmail.com"
     },
     en: {
         "nav.about": "About",
@@ -72,7 +72,7 @@ const translations = {
         "socials.tiktok": "TikTok",
         "socials.youtube": "YouTube",
         "contact.title": "CONTACT",
-        "contact.email": "somosthehaze@thehaze.com"
+        "contact.email": "somosthehaze@gmail.com"
     }
 };
 
