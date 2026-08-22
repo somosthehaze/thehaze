@@ -45,6 +45,20 @@
       <i class="fa-solid fa-bars"></i>
     </div>
 
+    <div class="nav-socials" aria-label="Redes sociales">
+
+      <a href="https://www.instagram.com/thehazeoficial/" target="_blank" rel="noopener noreferrer"
+        aria-label="Seguir a The Haze en Instagram" title="Instagram">
+        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+      </a>
+
+      <a href="https://www.facebook.com/somosthehaze/?locale=es_ES" target="_blank" rel="noopener noreferrer"
+        aria-label="Seguir a The Haze en Facebook" title="Facebook">
+        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+      </a>
+
+    </div>
+
     <div class="language-switcher" aria-label="Language selector">
 
       <button class="language-button active" type="button" data-language="es" aria-label="Cambiar a español">
@@ -127,15 +141,50 @@
 
     <div class="gallery-grid">
 
-      <img src="images/foto1.jpg" alt="">
-      <img src="images/foto2.jpg" alt="">
-      <img src="images/foto3.jpg" alt="">
-      <img src="images/foto4.jpg" alt="">
-      <img src="images/foto5.jpg" alt="">
+      <div class="gallery-frame gallery-feature">
+        <img src="images/foto1-web.jpg" alt="The Haze en directo" tabindex="0" role="button">
+        <span class="doodle doodle-top-left" aria-hidden="true"></span>
+        <span class="doodle doodle-top-right" aria-hidden="true"></span>
+        <span class="doodle doodle-bottom-left" aria-hidden="true"></span>
+        <span class="doodle doodle-bottom-right" aria-hidden="true"></span>
+      </div>
+
+      <div class="gallery-frame">
+        <img src="images/foto2.jpg" alt="The Haze tocando en directo" tabindex="0" role="button">
+        <span class="doodle doodle-top-left" aria-hidden="true"></span>
+        <span class="doodle doodle-top-right" aria-hidden="true"></span>
+        <span class="doodle doodle-bottom-left" aria-hidden="true"></span>
+        <span class="doodle doodle-bottom-right" aria-hidden="true"></span>
+      </div>
+
+      <div class="gallery-frame">
+        <img src="images/foto3.jpg" alt="The Haze sobre el escenario" tabindex="0" role="button">
+        <span class="doodle doodle-top-left" aria-hidden="true"></span>
+        <span class="doodle doodle-top-right" aria-hidden="true"></span>
+        <span class="doodle doodle-bottom-left" aria-hidden="true"></span>
+        <span class="doodle doodle-bottom-right" aria-hidden="true"></span>
+      </div>
 
     </div>
 
   </section>
+
+  <div class="gallery-lightbox" aria-hidden="true">
+
+    <button class="lightbox-close" type="button" aria-label="Cerrar imagen">
+      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+    </button>
+
+    <img class="lightbox-image" src="" alt="">
+
+  </div>
+
+  <svg class="doodle-filter" aria-hidden="true" width="0" height="0">
+    <filter id="pencil-wobble" x="-15%" y="-15%" width="130%" height="130%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" seed="8" result="noise"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+    </filter>
+  </svg>
 
   <!-- TOUR -->
 
@@ -301,6 +350,12 @@
             aria-label="Seguir a The Haze en TikTok">
             <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
             <span data-i18n="socials.tiktok">TikTok</span>
+          </a>
+
+          <a href="https://www.facebook.com/somosthehaze/?locale=es_ES" target="_blank" rel="noopener noreferrer"
+            aria-label="Seguir a The Haze en Facebook">
+            <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+            <span data-i18n="socials.facebook">Facebook</span>
           </a>
 
           <a href="https://www.youtube.com/@TheHazeOficial" target="_blank" rel="noopener noreferrer"

@@ -7,7 +7,7 @@ let aboutLinkNavigation = false;
 
 const translations = {
     es: {
-        "nav.about": "Sobre nosotros",
+        "nav.about": "Información",
         "nav.gallery": "Galería",
         "nav.tour": "Conciertos",
         "nav.music": "Música",
@@ -36,6 +36,7 @@ const translations = {
         "socials.label": "Sigue a The Haze",
         "socials.instagram": "Instagram",
         "socials.tiktok": "TikTok",
+        "socials.facebook": "Facebook",
         "socials.youtube": "YouTube",
         "contact.title": "CONTACTO",
         "contact.email": "somosthehaze@gmail.com"
@@ -70,6 +71,7 @@ const translations = {
         "socials.label": "Follow The Haze",
         "socials.instagram": "Instagram",
         "socials.tiktok": "TikTok",
+        "socials.facebook": "Facebook",
         "socials.youtube": "YouTube",
         "contact.title": "CONTACT",
         "contact.email": "somosthehaze@gmail.com"
@@ -377,6 +379,61 @@ window.addEventListener("load", () => {
 
     document.body.classList.add("loaded");
 
+});
+
+
+/* ==========================
+   GALLERY LIGHTBOX
+========================== */
+
+const galleryImages = document.querySelectorAll(".gallery-grid img");
+const galleryLightbox = document.querySelector(".gallery-lightbox");
+const lightboxImage = document.querySelector(".lightbox-image");
+const lightboxClose = document.querySelector(".lightbox-close");
+
+function closeGalleryLightbox() {
+
+    galleryLightbox?.classList.remove("is-open");
+    galleryLightbox?.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("lightbox-open");
+}
+
+function openGalleryLightbox(image) {
+
+    if (!galleryLightbox || !lightboxImage) return;
+
+    lightboxImage.src = image.currentSrc || image.src;
+    lightboxImage.alt = image.alt;
+    galleryLightbox.classList.add("is-open");
+    galleryLightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("lightbox-open");
+    lightboxClose?.focus();
+}
+
+galleryImages.forEach(image => {
+
+    image.addEventListener("click", () => openGalleryLightbox(image));
+
+    image.addEventListener("keydown", event => {
+
+        if (event.key === "Enter" || event.key === " ") {
+
+            event.preventDefault();
+            openGalleryLightbox(image);
+        }
+    });
+});
+
+lightboxClose?.addEventListener("click", closeGalleryLightbox);
+
+galleryLightbox?.addEventListener("click", event => {
+
+    if (event.target === galleryLightbox) closeGalleryLightbox();
+});
+
+document.addEventListener("keydown", event => {
+
+    if (event.key === "Escape") closeGalleryLightbox();
 });
 
 
